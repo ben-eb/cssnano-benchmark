@@ -1,0 +1,18 @@
+{
+  "name": "cssnano-benchmark",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "scripts": {
+    "bench": "tape index.js"
+  },
+  "repository": "ben-eb/cssnano-benchmark",
+  "dependencies": {
+    "css-frameworks": "git+https://git@github.com/ben-eb/css-frameworks.git",
+    "cssnano-cli": "^1.0.0",
+    "tape": "^4.2.0"
+  }
+}
