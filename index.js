@@ -4,13 +4,14 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 var frameworks = require('css-frameworks');
 
+var isWin = process.platform === 'win32';
+var cli = (isWin ? [ '/S', '/C' ] : []).concat([ path.resolve(__dirname, './node_modules/.bin/cssnano') ]);
+
 function setup (args, callback) {
     process.chdir(__dirname);
 
     var timer = process.hrtime();
-    var ps = spawn(process.execPath, [
-        path.resolve(__dirname, './node_modules/.bin/cssnano')
-    ].concat(args));
+    var ps = spawn(isWin ? 'CMD' : process.execPath, cli.concat(args));
 
     var out = '';
     var err = '';
